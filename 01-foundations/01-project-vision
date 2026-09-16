@@ -1,0 +1,214 @@
+Repo AI — Project Vision
+1. What is Repo AI?
+
+Repo AI is an AI-native developer tool designed to help developers reuse knowledge, architecture, components, and features from their previous projects when building new projects.
+
+The core idea is:
+
+Your previous projects become an AI-powered development library.
+
+Instead of starting every new project from scratch, Repo AI analyzes a developer's existing repositories and determines what can be reused, adapted, reimplemented, or should be avoided.
+
+2. The Problem
+
+Developers frequently build similar functionality across different projects.
+
+Examples:
+
+Authentication
+Role-based access control
+Payment systems
+File uploads
+Dashboards
+REST APIs
+Database models
+Notification systems
+Realtime communication
+Admin panels
+
+The developer may already have working implementations of these features in previous repositories.
+
+However, finding and reusing them is often manual.
+
+The developer has to:
+
+Remember which repository contains the feature.
+Search through the repository.
+Understand how the feature works.
+Determine whether it can be reused.
+Adapt it to the new project's architecture.
+Rewrite incompatible parts.
+
+Repo AI aims to automate and improve this process.
+
+3. Core Workflow
+
+The initial system will follow this general pipeline:
+
+Existing Repositories
+        ↓
+Repository Ingestion
+        ↓
+Code Parsing
+        ↓
+Repository Intelligence
+        ↓
+Feature / Architecture Extraction
+        ↓
+Semantic Representation
+        ↓
+Requirement Understanding
+        ↓
+Repository Retrieval
+        ↓
+Reuse Analysis
+        ↓
+Best-of-Library Blueprint
+
+The autonomous coding agent will be developed only after this foundation has been validated.
+
+4. Initial Product Goal
+
+The first meaningful version of Repo AI should answer:
+
+"Given a new project requirement, which of my previous repositories and components are useful, and how should I reuse them?"
+
+The system should not initially attempt to autonomously build the entire project.
+
+The first objective is intelligence and recommendation, not autonomous code generation.
+
+5. Reuse Philosophy
+
+Repo AI should optimize for:
+
+Maximum useful reuse, not maximum reuse.
+
+A component should not be recommended simply because it exists.
+
+The system should determine whether the component is actually suitable for the new project.
+
+Potential reuse classifications include:
+
+DIRECT_REUSE
+ADAPTABLE
+REIMPLEMENT
+INCOMPATIBLE
+HUMAN_REVIEW
+6. Development Philosophy
+
+The project will follow these principles:
+
+Deterministic First
+
+Use deterministic program analysis wherever possible.
+
+Examples:
+
+File discovery
+AST parsing
+Import/export extraction
+Dependency analysis
+Route detection
+Schema detection
+Framework detection
+
+AI should be introduced where semantic understanding is genuinely required.
+
+Local-First
+
+The initial system should minimize unnecessary infrastructure and API costs.
+
+Development should prioritize:
+
+Local execution
+PostgreSQL
+pgvector
+Tree-sitter
+Local or inexpensive models
+Provider abstraction
+Modular Monolith First
+
+Repo AI will initially be developed as a modular monolith.
+
+Microservices, queues, and distributed infrastructure should only be introduced when actual requirements justify them.
+
+Validate Before Automating
+
+The system should first prove that its repository intelligence and Blueprint actually save development time.
+
+Autonomous code modification should come later.
+
+7. What We Are NOT Building Yet
+
+At the beginning of development, we deliberately exclude:
+
+Frontend
+Autonomous coding agent
+Microservices
+Distributed queues
+Cloud infrastructure
+Full SaaS platform
+Automatic deployment
+
+These may become relevant later, but they are not part of the initial engineering problem.
+
+8. First Engineering Milestone
+
+The first milestone is:
+
+Convert source code into a structured syntax representation using Tree-sitter.
+
+The first experiment is intentionally tiny:
+
+TypeScript source code
+        ↓
+Tree-sitter
+        ↓
+TypeScript grammar
+        ↓
+Syntax Tree
+
+This establishes the foundation for everything that follows.
+
+9. Current Status
+Completed
+Backend project initialized
+TypeScript configured
+Tree-sitter installed
+TypeScript grammar installed
+First TypeScript source successfully parsed
+Root node successfully accessed
+AST structure successfully printed
+Current Learning
+
+Understanding:
+
+Parser
+Grammar
+Syntax tree
+AST nodes
+rootNode
+node.type
+Tree traversal
+Current Implementation
+
+The current experimental parser is located in:
+
+repo-ai-backend/src/parser.ts
+10. Engineering Rule
+
+The project will be built incrementally.
+
+For each major step:
+
+Understand the concept.
+Understand why it is required.
+Implement a small experiment.
+Test it.
+Break it intentionally where useful.
+Document what was learned.
+Only then move to the next abstraction.
+
+The goal is not merely to finish Repo AI.
+
+The goal is to understand how Repo AI works deeply enough that its architecture can be defended, modified, debugged, and eventually scaled.
